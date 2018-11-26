@@ -1,5 +1,9 @@
 #!/bin/bash
-echo "Bienvenue Monsieur, nous sommes le 20 Novembre 2018."
+jour=$(date +%d)
+mois=$(date +%B)
+an=$(date +%Y)
+echo "Bienvenue $USERNAME, nous sommes le $jour $mois $an."
 read -p "Quel répertoire vous interesse aujourd'hui ? : " repo
-echo "$repo"
+echo $repo:"
+ls -la $repo
 
