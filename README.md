@@ -13,7 +13,7 @@
 1. Pour forker le dépot projet-MoSEF-2018 dans mon compte **Github**, il me suffit
 de cliquer sur 'fork' en haut à droite de la page. Cela me permet d'avoir une copie du dépot directement sur mon compte **Github**.
 
-2. Je dois par la suite cloner cette copie en local. Pour ce faire, j'initialisedans un premier temps un dépot git à partir de mon terminal et je me place dans ce dernier :
+2. Je dois par la suite cloner cette copie en local. Pour ce faire, j'initialise dans un premier temps un dépot git à partir de mon terminal et je me place dans ce dernier :
 
 ```
 git init doss
@@ -53,7 +53,7 @@ J'utilise la variable d'environnement *USERNAME* pour afficher le nom du compte 
 Enfin, j'utilise *read -p* pour afficher un message prompt qui permettra à l'utilisateur de rentrer le chemin du dépot qui l'interesse. 
 La commande *echo* permet de renvoyer le chemin que l'utilisateur a demandé, puis *ls* fait la liste des fichiers et dépots contenus 
 dans ce répertoire.  Je sors de la **vim** en enregistrant mon travail avec `:wq`. Pour tester l'execution de mon fichier, je me mets
-sur le repo de la racine puis execute le fichier avec la commande *bash fichier_semaine_derniere.sh*. En effet, si je reste sur ce dépot, le nombre de repositories avec lequel le script fonctionnera sera trop limité.  
+sur mon repertoire personnel avec `cd` puis execute le fichier avec la commande *bash fichier_semaine_derniere.sh*. En effet, si je reste sur ce dépot, le nombre de répértoires avec lequel le script fonctionnera sera trop limité. J'aurais pu aussi introduire la commande `cd` dans le script après la commande `read` afin que l'execution du script prévoit directement de se mettre sur le répértoire personnel pour afficher la liste des fichiers et répértoires contenu dans le répértoire choisi.
 
 
 4. J'inclus mon nouveau fichier dans ce qui doit être enregistré sur **git**, puis je l'enregistre effectivement. Ensuite, je le pousse sur mon serveur distant: 
@@ -110,8 +110,14 @@ git merge pro
 
 10. Je supprime le fichier *Consignes.md* et pousse toutes les modifications sur github.
 
+Le push n'a pas fonctionné. J'avais rédigé le fichier `readme.md` et supprimé le fichier `Consignes.md` directement sur le shell. Cela a marché lorsque j'ai initialisé un nouveau répértoire git cloner mon dépot git et supprimer le dossier `Consignes.md`.
+
 ```
+cd
+git init depot
+git clone https://github.com/Rayannnn/MoSEF-projet-2018.git
+cd MoSEF-projet-2018
 git rm Consignes.md
-git commit -m "suppression du fichier"
+git commit -m "suppression du fichier
 git push origin master
 ```
